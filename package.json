@@ -1,0 +1,22 @@
+{
+  "name": "docker-deployment",
+  "version": "0.1.0",
+  "description": "Deploy docker applications on update to git branches",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bradbart/docker-deployment.git"
+  },
+  "author": "Brad Bartholomew <bradley.bartholomew@live.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bradbart/docker-deployment/issues"
+  },
+  "homepage": "https://github.com/bradbart/docker-deployment",
+  "dependencies": {
+    "github-webhook-handler": "^0.5.0"
+  }
+}
