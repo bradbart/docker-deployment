@@ -35,3 +35,4 @@ gitHubDeploy = gitHubDeployment({path: '/deployments'});
 http.createServer(function (req, res) {
   gitHubDeploy(req, res); 
 }).listen(3000); 
+console.log('Application Started on port 3000'); 
