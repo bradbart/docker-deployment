@@ -2,12 +2,16 @@ var exec = require('child_process').exec;
 var http = require('http'); 
 var gitHubWebHookHandler = require('github-webhook-handler'); 
 
-var config = {}; 
+var config = {
+    path: 'deployments', 
+    secret: ''
+}; 
+
 try {
   config = require(__dirname + '/config.js'); 
 }
 catch (err) {
-  console.log("unable to read file '" + fileName + "': ", err)
+  console.log("unable to read config.js", err)
 }
 
 function gitHubDeployment(config) {
@@ -31,7 +35,7 @@ function performDeployment(config, event) {
     console.log(repo, owner, branch, sha); 
 }
 
-gitHubDeploy = gitHubDeployment({path: '/deployments'}); 
+gitHubDeploy = gitHubDeployment(config); 
 http.createServer(function (req, res) {
   gitHubDeploy(req, res); 
 }).listen(3000); 
